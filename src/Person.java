@@ -8,6 +8,7 @@
  */
 
 public class Person {
+    //person has a first name a last name and get methods it also has a to string method
     private String firstName;
     private String lastName;
     private String phoneNumber;

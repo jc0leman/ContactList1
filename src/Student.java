@@ -9,6 +9,7 @@
 
 public class Student extends Person {
     private int grade;
+    //student has a first name a last name and grade  and get methods it also has a to string method that overides person
 
     public Student(String firstName, String lastName, String phoneNumber, int grade)
     {
@@ -36,7 +37,7 @@ public class Student extends Person {
     public String getPhoneNumber() {
         return super.getPhoneNumber();
     }
-
+@Override
     public String toString()
     {
         return super.toString() + " Grade:" + grade;

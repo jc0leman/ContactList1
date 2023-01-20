@@ -1,7 +1,7 @@
 
     public class Grandparent extends Person {
         private int years;
-
+        //grandparent has a first name a last name and an age and get methods it also has a to string method that overrides person
         public Grandparent(String firstName, String lastName, String phoneNumber, int years)
         {
             super(firstName, lastName, phoneNumber);
@@ -29,6 +29,8 @@
             return super.getPhoneNumber();
         }
 
+        //shows its overriden
+        @Override
         public String toString()
         {
             return super.toString() + " Is: " + years;
