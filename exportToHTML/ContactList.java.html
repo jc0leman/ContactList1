@@ -1,0 +1,338 @@
+<html>
+<head>
+<title>ContactList.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #629755; font-style: italic;}
+.s1 { color: #629755; font-weight: bold; font-style: italic;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #cc7832;}
+.s4 { color: #808080;}
+.s5 { color: #6a8759;}
+.s6 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ContactList.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/**</span>
+ <span class="s0">* A class that stores subclasses of Person as a contact list.</span>
+ <span class="s0">* The user is presented with a menu of options and may add, sort,</span>
+ <span class="s0">* search, or list the contacts.</span>
+ <span class="s0">*</span>
+ <span class="s0">* Created for Menlo School CS2</span>
+ <span class="s0">*</span>
+ <span class="s0">* </span><span class="s1">@author: </span><span class="s0">Ms. Namasivayam &amp; Mr. Blick</span>
+ <span class="s0">* </span><span class="s1">@version: </span><span class="s0">2022-2023</span>
+ <span class="s0">*/</span>
+
+<span class="s3">import </span><span class="s2">java.sql.SQLOutput</span><span class="s3">;</span>
+<span class="s3">import </span><span class="s2">java.util.ArrayList</span><span class="s3">;</span>
+<span class="s3">import </span><span class="s2">java.util.Scanner</span><span class="s3">;</span>
+
+
+
+<span class="s0">/**</span>
+ <span class="s0">* Jackson Coleman 1/19</span>
+ <span class="s0">* Written for MR Blick E Block</span>
+ <span class="s0">*/</span>
+<span class="s3">public class </span><span class="s2">ContactList {</span>
+
+    <span class="s4">// TODO: Create your array contacts</span>
+    <span class="s4">//arraylist of people to solve</span>
+    <span class="s3">private </span><span class="s2">ArrayList&lt;Person&gt; Humans = </span><span class="s3">new </span><span class="s2">ArrayList&lt;Person&gt;()</span><span class="s3">;</span>
+    <span class="s2">Scanner s = </span><span class="s3">new </span><span class="s2">Scanner(System.in)</span><span class="s3">;</span>
+
+    <span class="s4">// TODO: Write a Constructor</span>
+    <span class="s4">//empty constructor</span>
+    <span class="s3">public </span><span class="s2">ContactList() {</span>
+    <span class="s2">}</span>
+
+    <span class="s4">//prints out game instructions</span>
+    <span class="s3">public void </span><span class="s2">printMenuOptions() {</span>
+
+
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Menu: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;1. Add Contact&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;2. List All Contacts By First Name&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;3. List All Contacts By Last Name&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;4. List All Contacts By Phone Number&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;5. List All Students&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;6. Search By First Name&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;7. Search By Last Name&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;8. Search by Phone Number&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;0. Exit&quot;</span><span class="s2">)</span><span class="s3">;</span>
+
+
+    <span class="s2">}</span>
+
+    <span class="s0">/**</span>
+     <span class="s0">* Asks user for input to create and add a new Person</span>
+     <span class="s0">* to the contact list</span>
+     <span class="s0">*/</span>
+
+    <span class="s3">public void </span><span class="s2">addContact() {</span>
+        <span class="s4">// add contact method</span>
+        <span class="s4">//asks what type of contact you want to create</span>
+
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Select a type of Contact to add&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;1. Student&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;2. Grandparent&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s3">int </span><span class="s2">i = s.nextInt()</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Please fill out the following information&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;First name:&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">String firstName = s.next()</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Last Name:&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">String lastName = s.next()</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Phone Number: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">String phoneNumber = s.next()</span><span class="s3">;</span>
+        <span class="s4">//if select 1 create student curstudent and use that for student constructor</span>
+        <span class="s3">if </span><span class="s2">(i == </span><span class="s6">1</span><span class="s2">) {</span>
+            <span class="s2">System.out.println(</span><span class="s5">&quot;Grade: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+            <span class="s3">int </span><span class="s2">grade = s.nextInt()</span><span class="s3">;</span>
+            <span class="s2">Person curStudent = </span><span class="s3">new </span><span class="s2">Student(firstName</span><span class="s3">, </span><span class="s2">lastName</span><span class="s3">, </span><span class="s2">phoneNumber</span><span class="s3">, </span><span class="s2">grade)</span><span class="s3">;</span>
+            <span class="s2">Humans.add(curStudent)</span><span class="s3">;</span>
+
+        <span class="s2">}</span>
+        <span class="s3">if </span><span class="s2">(i == </span><span class="s6">2</span><span class="s2">) {</span>
+            <span class="s4">// //if select 2 create student curgrandparent and use that for student constructor</span>
+            <span class="s2">System.out.println(</span><span class="s5">&quot;Age: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+            <span class="s3">int </span><span class="s2">age = s.nextInt()</span><span class="s3">;</span>
+            <span class="s2">Person curGrandparent = </span><span class="s3">new </span><span class="s2">Grandparent(firstName</span><span class="s3">, </span><span class="s2">lastName</span><span class="s3">, </span><span class="s2">phoneNumber</span><span class="s3">, </span><span class="s2">age)</span><span class="s3">;</span>
+
+            <span class="s2">Humans.add(curGrandparent)</span><span class="s3">;</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">/**</span>
+     <span class="s0">* Loops through and prints all contacts</span>
+     <span class="s0">*/</span>
+    <span class="s3">public void </span><span class="s2">printContacts() {</span>
+        <span class="s4">//prints all people in the array</span>
+        <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; Humans.size()</span><span class="s3">; </span><span class="s2">i++) {</span>
+            <span class="s2">System.out.println(Humans.get(i))</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s4">// TODO: Complete the printContacts method</span>
+    <span class="s2">}</span>
+
+    <span class="s0">/**</span>
+     <span class="s0">* Bubble sorts the contacts in the list by firstName,</span>
+     <span class="s0">* lastName, or phoneNumber</span>
+     <span class="s0">*</span>
+     <span class="s0">* </span><span class="s1">@param </span><span class="s0">sortBy: 0=firstName, 1=lastName, 2=phoneNumber</span>
+     <span class="s0">*/</span>
+    <span class="s3">public void </span><span class="s2">sort(</span><span class="s3">int </span><span class="s2">sortBy) {</span>
+        <span class="s4">// TODO: Complete the sort method</span>
+
+        <span class="s4">//if you select sort by first name</span>
+        <span class="s3">if </span><span class="s2">(sortBy == </span><span class="s6">0</span><span class="s2">) {</span>
+
+            <span class="s4">//starts out of order</span>
+            <span class="s4">//greater than one so we dont have compile issues</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() &gt; </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">i++) {</span>
+                <span class="s4">//go through array, and if 2 out of order</span>
+                <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">j = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">j &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">j++) {</span>
+                    <span class="s2">String p1 = Humans.get(j).getFirstName()</span><span class="s3">;</span>
+                    <span class="s2">String p2 = Humans.get(j + </span><span class="s6">1</span><span class="s2">).getFirstName()</span><span class="s3">;</span>
+                    <span class="s4">//swaps index if the current I is greater than the previous I</span>
+                    <span class="s3">if </span><span class="s2">(p1.compareTo(p2) &gt; </span><span class="s6">0</span><span class="s2">) {</span>
+                        <span class="s4">//this makes sure the two get swapped</span>
+                        <span class="s2">Humans.add(j + </span><span class="s6">2</span><span class="s3">, </span><span class="s2">Humans.get(j))</span><span class="s3">;</span>
+                        <span class="s2">Humans.remove(j)</span><span class="s3">;</span>
+                    <span class="s2">}</span>
+                    <span class="s4">//more efficent solution methods</span>
+
+                <span class="s2">}}</span>
+            <span class="s2">}</span>
+        <span class="s2">printContacts()</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() == </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s2">printContacts()</span><span class="s3">;</span><span class="s2">}</span>
+
+
+        <span class="s2">}</span>
+
+
+        <span class="s3">if </span><span class="s2">(sortBy == </span><span class="s6">1</span><span class="s2">) {</span>
+
+            <span class="s4">//starts out of order</span>
+            <span class="s4">//greater than one so we dont have compile issues</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() &gt; </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">i++) {</span>
+                    <span class="s4">//go through array, and if 2 out of order</span>
+                    <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">j = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">j &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">j++) {</span>
+                        <span class="s2">String p1 = Humans.get(j).getLastName()</span><span class="s3">;</span>
+                        <span class="s2">String p2 = Humans.get(j + </span><span class="s6">1</span><span class="s2">).getLastName()</span><span class="s3">;</span>
+                        <span class="s4">//swaps index if the current I is greater than the previous I</span>
+                        <span class="s3">if </span><span class="s2">(p1.compareTo(p2) &gt; </span><span class="s6">0</span><span class="s2">) {</span>
+                            <span class="s4">//this makes sure the two get swapped</span>
+                            <span class="s2">Humans.add(j + </span><span class="s6">2</span><span class="s3">, </span><span class="s2">Humans.get(j))</span><span class="s3">;</span>
+                            <span class="s2">Humans.remove(j)</span><span class="s3">;</span>
+                        <span class="s2">}</span>
+                        <span class="s4">//more efficent solution methods</span>
+
+                    <span class="s2">}}</span>
+            <span class="s2">}</span>
+            <span class="s2">printContacts()</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() == </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s2">printContacts()</span><span class="s3">;</span><span class="s2">}</span>
+
+
+        <span class="s2">} </span><span class="s3">if </span><span class="s2">(sortBy == </span><span class="s6">2</span><span class="s2">) {</span>
+
+            <span class="s4">//starts out of order</span>
+            <span class="s4">//greater than one so we dont have compile issues</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() &gt; </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">i++) {</span>
+                    <span class="s4">//go through array, and if 2 out of order</span>
+                    <span class="s3">for </span><span class="s2">(</span><span class="s3">int </span><span class="s2">j = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">j &lt; (Humans.size() - </span><span class="s6">1</span><span class="s2">)</span><span class="s3">; </span><span class="s2">j++) {</span>
+                        <span class="s2">String p1 = Humans.get(j).getPhoneNumber()</span><span class="s3">;</span>
+                        <span class="s2">String p2 = Humans.get(j + </span><span class="s6">1</span><span class="s2">).getPhoneNumber()</span><span class="s3">;</span>
+                        <span class="s4">//swaps index if the current I is greater than the previous I</span>
+                        <span class="s3">if </span><span class="s2">(p1.compareTo(p2) &gt; </span><span class="s6">0</span><span class="s2">) {</span>
+                            <span class="s4">//this makes sure the two get swapped</span>
+                            <span class="s2">Humans.add(j + </span><span class="s6">2</span><span class="s3">, </span><span class="s2">Humans.get(j))</span><span class="s3">;</span>
+                            <span class="s2">Humans.remove(j)</span><span class="s3">;</span>
+                        <span class="s2">}</span>
+                        <span class="s4">//more efficent solution methods but I used bubble sort</span>
+
+                    <span class="s2">}}</span>
+            <span class="s2">}</span>
+            <span class="s2">printContacts()</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s2">(Humans.size() == </span><span class="s6">1</span><span class="s2">) {</span>
+                <span class="s2">printContacts()</span><span class="s3">;</span><span class="s2">}</span>
+
+
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+
+
+    <span class="s0">/**</span>
+     <span class="s0">* Lists just the Student objects in the Contact List</span>
+     <span class="s0">*/</span>
+    <span class="s3">public void </span><span class="s2">listStudents() {</span>
+        <span class="s4">//checks for students and prints them</span>
+        <span class="s3">for</span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; Humans.size()</span><span class="s3">; </span><span class="s2">i++)</span>
+        <span class="s2">{</span>
+            <span class="s3">if</span><span class="s2">(Humans.get(i) </span><span class="s3">instanceof </span><span class="s2">Student)</span>
+            <span class="s2">{</span>
+                <span class="s2">System.out.println(Humans.get(i))</span><span class="s3">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s4">// TODO: Complete the listStudents method</span>
+    <span class="s2">}</span>
+
+    <span class="s0">/**</span>
+     <span class="s0">* Loops providing menu options to the user</span>
+     <span class="s0">* until the user exits</span>
+     <span class="s0">*/</span>
+    <span class="s3">public void </span><span class="s2">run() {</span>
+
+
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Welcome to your Contacts List&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">System.out.println(</span><span class="s5">&quot;Please pick from the following menu options&quot;</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">printMenuOptions()</span><span class="s3">;</span>
+        <span class="s3">int </span><span class="s2">dirNum = s.nextInt()</span><span class="s3">;</span>
+       <span class="s4">//until user decides to end the program the thing will continously prompt the user</span>
+
+        <span class="s3">while</span><span class="s2">(dirNum!= </span><span class="s6">0</span><span class="s2">){</span>
+
+
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">1</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">addContact()</span><span class="s3">;</span>
+
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">2</span><span class="s2">) {</span>
+            <span class="s2">sort(</span><span class="s6">0</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">3</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">sort(</span><span class="s6">1</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">4</span><span class="s2">)</span>
+            <span class="s2">sort(</span><span class="s6">2</span><span class="s2">)</span><span class="s3">;</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">5</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">listStudents()</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">6</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">System.out.println(</span><span class="s5">&quot;Enter your first name you seek to find: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+            <span class="s2">String first = s.next()</span><span class="s3">;</span>
+            <span class="s2">System.out.println(searchByFirstName(first))</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">7</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">System.out.println(</span><span class="s5">&quot;Enter your last name you seek to find: &quot;</span><span class="s2">)</span><span class="s3">;</span>
+            <span class="s2">String last = s.next()</span><span class="s3">;</span>
+            <span class="s2">System.out.println(searchByLastName(last))</span><span class="s3">;</span>
+        <span class="s2">}</span>
+        <span class="s3">if</span><span class="s2">(dirNum == </span><span class="s6">8</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s2">System.out.println(</span><span class="s5">&quot;Enter the Phone number you seek to find&quot;</span><span class="s2">)</span><span class="s3">;</span>
+            <span class="s2">String phone = s.next()</span><span class="s3">;</span>
+            <span class="s2">System.out.println(searchByPhoneNumber(phone))</span><span class="s3">;</span>
+        <span class="s2">}</span>
+            <span class="s2">printMenuOptions()</span><span class="s3">;</span>
+        <span class="s2">dirNum = s.nextInt()</span><span class="s3">;</span>
+
+
+
+
+
+        <span class="s4">// TODO: Complete the run method</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    <span class="s3">public </span><span class="s2">Person searchByFirstName(String firstName)</span>
+    <span class="s2">{</span>
+        <span class="s4">//checks to see if string is equal to any first name</span>
+        <span class="s3">for</span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; Humans.size()</span><span class="s3">; </span><span class="s2">i++)</span>
+        <span class="s2">{</span>
+            <span class="s3">if</span><span class="s2">(Humans.get(i).getFirstName().equals(firstName))</span>
+            <span class="s2">{</span>
+                <span class="s3">return </span><span class="s2">Humans.get(i)</span><span class="s3">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s3">return null;</span>
+    <span class="s2">}</span>
+    <span class="s3">public </span><span class="s2">Person searchByLastName(String lastName)</span>
+    <span class="s2">{</span>
+        <span class="s4">//checks to see if string is equal to any last name</span>
+        <span class="s3">for</span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; Humans.size()</span><span class="s3">; </span><span class="s2">i++)</span>
+        <span class="s2">{</span>
+            <span class="s3">if</span><span class="s2">(Humans.get(i).getLastName().equals(lastName))</span>
+            <span class="s2">{</span>
+                <span class="s3">return </span><span class="s2">Humans.get(i)</span><span class="s3">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s3">return null;</span>
+    <span class="s2">}</span>
+    <span class="s3">public </span><span class="s2">Person searchByPhoneNumber(String phoneNumber)</span>
+    <span class="s2">{</span>
+        <span class="s4">//checks to see if string is equal to any phone number</span>
+        <span class="s3">for</span><span class="s2">(</span><span class="s3">int </span><span class="s2">i = </span><span class="s6">0</span><span class="s3">; </span><span class="s2">i &lt; Humans.size()</span><span class="s3">; </span><span class="s2">i++)</span>
+        <span class="s2">{</span>
+            <span class="s3">if</span><span class="s2">(Humans.get(i).getPhoneNumber().equals(phoneNumber))</span>
+            <span class="s2">{</span>
+                <span class="s3">return </span><span class="s2">Humans.get(i)</span><span class="s3">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s3">return null;</span>
+    <span class="s2">}</span>
+    <span class="s3">public static void </span><span class="s2">main(String[] args)</span>
+    <span class="s2">{</span>
+        <span class="s4">//calls run is the main function</span>
+        <span class="s2">ContactList cl = </span><span class="s3">new </span><span class="s2">ContactList()</span><span class="s3">;</span>
+        <span class="s2">cl.run()</span><span class="s3">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>

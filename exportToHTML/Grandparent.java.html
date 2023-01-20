@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Grandparent.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Grandparent.java</font>
+</center></td></tr></table>
+<pre>
+    <span class="s1">public class </span><span class="s0">Grandparent </span><span class="s1">extends </span><span class="s0">Person {</span>
+        <span class="s1">private int </span><span class="s0">years</span><span class="s1">;</span>
+        <span class="s2">//grandparent has a first name a last name and an age and get methods it also has a to string method that overrides person</span>
+        <span class="s1">public </span><span class="s0">Grandparent(String firstName</span><span class="s1">, </span><span class="s0">String lastName</span><span class="s1">, </span><span class="s0">String phoneNumber</span><span class="s1">, int </span><span class="s0">years)</span>
+        <span class="s0">{</span>
+            <span class="s1">super</span><span class="s0">(firstName</span><span class="s1">, </span><span class="s0">lastName</span><span class="s1">, </span><span class="s0">phoneNumber)</span><span class="s1">;</span>
+            <span class="s1">this</span><span class="s0">.years = years</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+        <span class="s1">public int </span><span class="s0">getAge() {</span>
+            <span class="s1">return </span><span class="s0">years</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+        <span class="s1">public void </span><span class="s0">setAge(</span><span class="s1">int </span><span class="s0">years) {</span>
+            <span class="s1">this</span><span class="s0">.years = years</span><span class="s1">;</span>
+        <span class="s0">}</span>
+        <span class="s1">public </span><span class="s0">String getFirstName() {</span>
+            <span class="s1">return super</span><span class="s0">.getFirstName()</span><span class="s1">;</span>
+
+        <span class="s0">}</span>
+        <span class="s1">public </span><span class="s0">String getLastName() {</span>
+            <span class="s1">return super</span><span class="s0">.getLastName()</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+
+
+        <span class="s1">public </span><span class="s0">String getPhoneNumber() {</span>
+            <span class="s1">return super</span><span class="s0">.getPhoneNumber()</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+        <span class="s2">//shows its overriden</span>
+        <span class="s0">@Override</span>
+        <span class="s1">public </span><span class="s0">String toString()</span>
+        <span class="s0">{</span>
+            <span class="s1">return super</span><span class="s0">.toString() + </span><span class="s3">&quot; Is: &quot; </span><span class="s0">+ years</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+<span class="s2">// TODO: Modify and complete this class</span>
+    <span class="s0">}</span>
+
+
+
+</pre>
+</body>
+</html>

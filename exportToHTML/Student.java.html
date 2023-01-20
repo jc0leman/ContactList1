@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Student.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #629755; font-style: italic;}
+.s1 { color: #629755; font-weight: bold; font-style: italic;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #cc7832;}
+.s4 { color: #808080;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Student.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/**</span>
+ <span class="s0">* A subclass of Person that represents a Student</span>
+ <span class="s0">*</span>
+ <span class="s0">* Created for Menlo School CS2</span>
+ <span class="s0">*</span>
+ <span class="s0">* </span><span class="s1">@author: </span><span class="s0">Ms. Namasivayam &amp; Mr. Blick</span>
+ <span class="s0">* </span><span class="s1">@version: </span><span class="s0">2022-2023</span>
+ <span class="s0">*/</span>
+
+<span class="s3">public class </span><span class="s2">Student </span><span class="s3">extends </span><span class="s2">Person {</span>
+    <span class="s3">private int </span><span class="s2">grade</span><span class="s3">;</span>
+    <span class="s4">//student has a first name a last name and grade  and get methods it also has a to string method that overides person</span>
+
+    <span class="s3">public </span><span class="s2">Student(String firstName</span><span class="s3">, </span><span class="s2">String lastName</span><span class="s3">, </span><span class="s2">String phoneNumber</span><span class="s3">, int </span><span class="s2">grade)</span>
+    <span class="s2">{</span>
+        <span class="s3">super</span><span class="s2">(firstName</span><span class="s3">, </span><span class="s2">lastName</span><span class="s3">, </span><span class="s2">phoneNumber)</span><span class="s3">;</span>
+        <span class="s3">this</span><span class="s2">.grade = grade</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">public int </span><span class="s2">getGrade() {</span>
+        <span class="s3">return </span><span class="s2">grade</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">public void </span><span class="s2">setGrade(</span><span class="s3">int </span><span class="s2">grade) {</span>
+        <span class="s3">this</span><span class="s2">.grade = grade</span><span class="s3">;</span>
+    <span class="s2">}</span>
+    <span class="s3">public </span><span class="s2">String getFirstName() {</span>
+        <span class="s3">return super</span><span class="s2">.getFirstName()</span><span class="s3">;</span>
+
+    <span class="s2">}</span>
+    <span class="s3">public </span><span class="s2">String getLastName() {</span>
+        <span class="s3">return super</span><span class="s2">.getLastName()</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+
+
+    <span class="s3">public </span><span class="s2">String getPhoneNumber() {</span>
+        <span class="s3">return super</span><span class="s2">.getPhoneNumber()</span><span class="s3">;</span>
+    <span class="s2">}</span>
+<span class="s2">@Override</span>
+    <span class="s3">public </span><span class="s2">String toString()</span>
+    <span class="s2">{</span>
+        <span class="s3">return super</span><span class="s2">.toString() + </span><span class="s5">&quot; Grade:&quot; </span><span class="s2">+ grade</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+<span class="s4">// TODO: Modify and complete this class</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>
